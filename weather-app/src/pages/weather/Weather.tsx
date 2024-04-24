@@ -32,19 +32,32 @@ const Weather = () => {
     
     return  (  
     <>
-    <button  onClick={toggleUnit}>Change temp Unit</button>
 
         {weather && (
             <>
                 <h2>
                     {weather.city.name} -- {weather.city.country}
                 </h2>
+                <button  onClick={toggleUnit}>Change temp Unit</button>
+
                 {weather.list.map((element:any) => {
                     const date = new Date((element.dt + weather.city.timezone)*1000)
-                    return <p key={element.dt}>Date: {date.toUTCString()} <br></br> 
-                    Temp: {element.main.temp} <br></br> 
-                    {element.weather[0].description} <br></br>
-                    </p>
+                    const sunset = new Date((weather.city.sunset + weather.city.timezone)*1000)
+                    const sunrise = new Date((weather.city.sunrise + weather.city.timezone)*1000)
+                    const sunriseResult = [sunrise.getUTCHours(), ":",  sunrise.getMinutes(), ":", sunrise.getSeconds()]
+                    const sunsetResult = [sunset.getUTCHours(), ":",  sunset.getMinutes(), ":", sunset.getSeconds()]
+
+
+                    return <div key={element.dt}>
+                        <p> Date: {date.toUTCString()}          </p>
+                        <p> Temp: {element.main.temp}           </p>
+                        <p> Humidity: {element.main.humidity}%  </p>
+                        <p> Wind: {element.wind.speed} m/s      </p>
+                        <p> {element.weather[0].description}    </p>
+                        <p> Sunrise: {sunriseResult} GMT        </p>
+                        <p> Sunset: {sunsetResult} GMT          </p>
+                        <br />
+                    </div>
                 })}
             </>
         )}
