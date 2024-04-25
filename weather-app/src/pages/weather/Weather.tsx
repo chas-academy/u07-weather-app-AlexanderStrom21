@@ -48,7 +48,7 @@ const Weather = () => {
                     const sunsetResult = [sunset.getUTCHours(), ":",  sunset.getMinutes(), ":", sunset.getSeconds()]
 
 
-                    return <div key={element.dt}>
+                    return<div key={element.dt} className="">
                         <p> Date: {date.toUTCString()}          </p>
                         <p> Temp: {element.main.temp}           </p>
                         <p> Humidity: {element.main.humidity}%  </p>
