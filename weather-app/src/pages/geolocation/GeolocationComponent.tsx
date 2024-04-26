@@ -35,7 +35,12 @@ const GeolocationComponent = () =>{
 
     return (
     <>
+        <div className="flex justify-center p-5">
+        <div className="flex justify-center bg-gray-900 text-gray-300 w-fit p-3 rounded-lg">
         <button onClick={() => getLocation()}>Get location</button>
+        </div>
+        </div>
+     
         <h2>Coordinates</h2>
         {status && <p>{status}</p>}
         {userPosition?.latitude && <p>Latitude: {userPosition?.latitude}</p>}

@@ -9,9 +9,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <>
-    <div>
-      <h1>Welcome to the website</h1>
-      <Link to="about">About</Link> | <Link to="app">App</Link> | <Link to="geolocation">Geolocation</Link> | <Link to="weather">Weather</Link>
+    <div className='flex bg-gray-900 text-gray-300'>
+      <Link className='p-5' to="about">About</Link>  <Link className='p-5' to="app">App</Link>  <Link className='p-5' to="geolocation">Geolocation</Link>  <Link className='p-5' to="weather">Weather</Link>
     </div>
     {/* outlet annvänds för att skriva ut children */}
     <Outlet></Outlet>   
