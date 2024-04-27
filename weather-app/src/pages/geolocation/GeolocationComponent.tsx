@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUserLocationStore } from "../store/userStorelocation";
 
 const GeolocationComponent = () =>{
@@ -32,19 +32,16 @@ const GeolocationComponent = () =>{
     }
 );
     };
-
+    useEffect(() => {
+        getLocation()
+    }, []);
     return (
     <>
-        <div className="flex justify-center p-5">
-        <div className="flex justify-center bg-gray-900 text-gray-300 w-fit p-3 rounded-lg">
-        <button onClick={() => getLocation()}>Get location</button>
-        </div>
-        </div>
-     
-        <h2>Coordinates</h2>
+        
+        {/* <h2>your coordinates</h2>
         {status && <p>{status}</p>}
         {userPosition?.latitude && <p>Latitude: {userPosition?.latitude}</p>}
-        {userPosition?.longitude && <p>Longitude: {userPosition?.longitude}</p>}
+        {userPosition?.longitude && <p>Longitude: {userPosition?.longitude}</p>} */}
     </>
     );
 };
