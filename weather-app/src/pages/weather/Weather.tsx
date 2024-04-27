@@ -4,7 +4,6 @@ import GeolocationComponent from '../geolocation/GeolocationComponent';
 import ImageCloud from "../../assets/pictures/iso-republic-puffy-clouds.jpg";
 import ImageRain from "../../assets/pictures/iso-republic-water-droplets-on-glass-window.jpg";
 import ImageSnow from "../../assets/pictures/thomas-griesbeck-FytijU4pB_w-unsplash.jpg";
-import { list } from "postcss";
 
 const APIKEY = import.meta.env.VITE_API_KEY;
 const Weather = () => {

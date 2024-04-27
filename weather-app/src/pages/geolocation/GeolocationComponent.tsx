@@ -6,7 +6,7 @@ const GeolocationComponent = () =>{
     //     latitude: number;
     //     longitude: number;
     // } | null>(null);
-    const userPosition = useUserLocationStore((state:any) => state.userLocation);
+    // const userPosition = useUserLocationStore((state:any) => state.userLocation);
     const setUserPosition = useUserLocationStore(
         (state: any) => state.updateUserLocation
     );
@@ -37,9 +37,8 @@ const GeolocationComponent = () =>{
     }, []);
     return (
     <>
-        
-        {/* <h2>your coordinates</h2>
         {status && <p>{status}</p>}
+        {/* <h2>your coordinates</h2>
         {userPosition?.latitude && <p>Latitude: {userPosition?.latitude}</p>}
         {userPosition?.longitude && <p>Longitude: {userPosition?.longitude}</p>} */}
     </>
