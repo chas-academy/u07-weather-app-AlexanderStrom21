@@ -9,13 +9,13 @@ const router = createBrowserRouter([
     path: "/",
     element: <>
     <div className='flex bg-gray-900 text-gray-300'>
-    <Link className='p-5' to="app">App</Link>  <Link className='p-5' to="weather">Weather</Link>
+    <Link className='p-5' to="/">About me</Link>  <Link className='p-5' to="weather">Weather</Link>
     </div>
     {/* outlet annvänds för att skriva ut children */}
     <Outlet></Outlet>   
    </>,
    children: [
-    { path:"app", element:<App></App>},
+    { path:"/", element:<App></App>},
     { path:"weather", element: <Weather></Weather>},
 
    ],
